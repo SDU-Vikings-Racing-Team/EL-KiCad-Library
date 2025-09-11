@@ -1,4 +1,4 @@
-## <span style="color:rgb(191, 194, 0)">▋</span> Setup guide
+## $${\color{yellow} ▋}$$ Setup guide
 1. Choose a suitable folder location on your pc for the KiCad material
 2. Open cmd in the appropriate folder location and type: git clone https://github.com/SDU-Vikings-Racing-Team/EL-KiCad-Library.git
 3. On KiCad homescreen, in the top toolbar, open preferences, manage symbol libraries
