@@ -1,5 +1,0 @@
-(footprint_lib_table
-  (lib (name "EL_Passives")    (type "KiCad")(uri "${EL_LIBS}/footprints/EL_Passives.pretty"))
-  (lib (name "EL_Connectors")  (type "KiCad")(uri "${EL_LIBS}/footprints/EL_Connectors.pretty"))
-  (lib (name "EL_Graphics")    (type "KiCad")(uri "${EL_LIBS}/footprints/EL_Graphics.pretty"))
-)

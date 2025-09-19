@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name "EL_Passives")    (type "KiCad")(uri "${EL_LIBS}/symbols/EL_Passives.kicad_sym"))
-  (lib (name "EL_Connectors")  (type "KiCad")(uri "${EL_LIBS}/symbols/EL_Connectors.kicad_sym"))
-  (lib (name "EL_Graphics")    (type "KiCad")(uri "${EL_LIBS}/symbols/EL_Graphics.kicad_sym"))
-)
