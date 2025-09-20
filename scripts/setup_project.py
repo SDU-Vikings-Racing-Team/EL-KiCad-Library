@@ -79,7 +79,7 @@ def write_if_changed(project_dir: Path, fname: str, content: str, dry: bool):
 
 def main():
     ap = argparse.ArgumentParser(description="Generate KiCad project tables for all projects in this repo.")
-    ap.add_argument("--repo-root", default=".", help="Path to the product repo root (default: current dir)")
+    ap.add_argument("--repo-root", default=".", help="Path to the repo root (default: current dir)")
     ap.add_argument("--lib-submodule", default=DEFAULT_LIB_SUBMODULE,
                     help="Path (from repo root) to EL-KiCad-Library submodule")
     ap.add_argument("--manifest", help="Optional YAML file listing projects to update")

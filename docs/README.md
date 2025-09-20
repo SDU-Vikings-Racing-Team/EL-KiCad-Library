@@ -1,8 +1,158 @@
-NOTE: an automated setup script is on the way
-## $${\color{yellow} ▋}$$ Setup guide
-1. Choose a suitable folder location on your pc for the KiCad material
-2. Open cmd in the appropriate folder location and type: git clone https://github.com/SDU-Vikings-Racing-Team/EL-KiCad-Library.git
-3. On KiCad homescreen, in the top toolbar, open preferences, manage symbol libraries
-4. Click the "add existing library to table" button (small grey folder icon), make sure you add to global library for ease of use
-5. Navigate to the location of the symbol library file. (.\EL-KiCad-Library\symbols\Viking_components.kicad_sym)
-6. Repeat for the footprints, (find the Viking_components.pretty) file 
+# KiCad Library Integration Guide
+
+This guide explains how to set up and maintain the shared EL-KiCad-Library across multiple repositories and projects. It is written for both maintainers and team members.
+
+---
+
+## Maintainer Guide
+
+### Library repository structure
+
+The EL-KiCad-Library repository is structured as follows:
+
+```
+EL-KiCad-Library/
+├─ symbols/
+│   ├─ VIKING_Connectors.kicad_sym
+│   ├─ VIKING_Passives.kicad_sym
+│   └─ ...
+├─ footprints/
+│   ├─ VIKING_Connectors.pretty/
+│   ├─ VIKING_Passives.pretty/
+│   └─ ...
+├─ 3dmodels/
+│   └─ ...
+├─ scripts/
+│   └─ setup_project.py
+└─ docs/
+    └─ README.md
+```
+
+- **symbols**: schematic symbol libraries
+    
+- **footprints**: PCB footprint libraries
+    
+- **3dmodels**: 3D models
+    
+- **library-tables**: template tables
+    
+- **scripts**: library setup (and potentially other helpers in the future)
+    
+- **docs**: documentation
+
+### Responsibilities of maintainers
+
+- Add new components to the library repository
+- Tag releases of the library repository so other repositories can use known working versions
+- Review contributions from team members
+
+### Releasing new versions
+
+1. Test changes locally with at least one KiCad project.
+2. Commit and push updates to **EL-KiCad-Library**.
+3. Tag a release, for example `v0.2.0`.
+4. Notify teams to update their submodule reference.
+
+
+---
+
+## Team Member Guide
+
+### Adding the library submodule
+
+If your repository does not yet contain the library, add it once as a submodule:
+
+```bash
+git submodule add https://github.com/SDU-Vikings-Racing-Team/EL-KiCad-Library libs/EL-KiCad-Library
+git commit -m "Add EL-KiCad-Library submodule"
+```
+
+After this, teammates only need to clone with `--recurse-submodules` to get it.
+
+> **Important:** The submodule must always live at `libs/EL-KiCad-Library` relative to the repository root. The setup script depends on this path.
+
+### Cloning a repository with the library
+
+When you clone a repository (for example `EL-Dashboard`), make sure to include submodules:
+
+```bash
+git clone --recurse-submodules https://github.com/SDU-Vikings-Racing-Team/EL-Dashboard.git
+```
+
+If already cloned without submodules:
+
+```bash
+git submodule update --init --recursive
+```
+
+This ensures `libs/EL-KiCad-Library` is present.
+
+### Generating project library tables
+
+From the repository root, run:
+
+```bash
+# Preview changes
+python libs/EL-KiCad-Library/scripts/setup_project.py --dry-run
+
+# Write tables for all projects
+python libs/EL-KiCad-Library/scripts/setup_project.py
+```
+
+This creates or updates `sym-lib-table` and `fp-lib-table` in each KiCad project folder.
+
+Commit these files:
+
+```bash
+git add **/sym-lib-table **/fp-lib-table
+git commit -m "Generate KiCad library tables"
+```
+
+### KiCad global setup
+
+If you have never opened KiCad before, the first time you open KiCad it will prompt you to configure the global symbol library table.
+
+- Select **Copy default global symbol library table (recommended)**
+    
+- Press **OK**
+
+This ensures you have both the default KiCad libraries and the Vikings library.
+
+### Verifying in KiCad
+
+1. Open the project `.kicad_pro`.
+    
+2. In **Schematic Editor**, press **A** and search for `VIKING_`. Your libraries should appear.
+    
+3. In **PCB Editor**, open the **Footprint Libraries Browser** and confirm `VIKING_*` entries.
+    
+4. Place a symbol, update PCB, and verify that the footprint and 3D model are correct.
+
+### Updating submodule
+
+When there is a new release:
+
+```bash
+git -C libs/EL-KiCad-Library fetch --tags
+git -C libs/EL-KiCad-Library checkout v0.2.0
+git add libs/EL-KiCad-Library
+git commit -m "Update EL-KiCad-Library to v0.2.0"
+```
+
+### Ignoring projects
+
+To skip irrelevant folder during setup, create `.kicadprojignore` in the repository root:
+
+```
+**/libs/**
+**/third_party/**
+**/archive/**
+```
+
+You can also create a `kicad-projects.yml` with explicit project paths to include:
+
+```yaml
+projects:
+  - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/DashboardPCB
+  - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/Steering Wheel/SteeringWheelPCB
+```
