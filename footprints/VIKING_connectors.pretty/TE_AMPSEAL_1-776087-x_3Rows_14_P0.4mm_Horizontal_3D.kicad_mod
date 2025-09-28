@@ -79,7 +79,7 @@
   (pad 3 thru_hole circle (at -6 -4) (size 3 3) (drill 1.75) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at -10 -4) (size 3 3) (drill 1.75) (layers *.Cu *.Mask))
   (pad 1 thru_hole rect (at -14 -4) (size 3 3) (drill 1.75) (layers *.Cu *.Mask))
-  (model ${VIKINGSX}/3D/TE/c-1-776266-1-b-3d.stp
+  (model ${VIKINGS}/3dmodels/c-1-776266-1-b-3d.stp
     (offset (xyz -6 -31.75 11.5))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

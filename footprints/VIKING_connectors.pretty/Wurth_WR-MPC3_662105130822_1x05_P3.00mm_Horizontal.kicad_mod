@@ -19,12 +19,12 @@
   (pad 5 smd rect (at 12 0) (size 1.27 2.92) (layers F.Cu F.Paste F.Mask))
   (pad MP thru_hole circle (at -2.16 5.47) (size 4.5 4.5) (drill 2.35) (layers *.Cu *.Mask))
   (pad MP thru_hole circle (at 14.34 5.47) (size 4.5 4.5) (drill 2.35) (layers *.Cu *.Mask))
-  (model ${VIKINGSX}/3D/Wurth/662105130822_Downloads_STP_662105130822_rev1.stp
+  (model ${VIKINGS}/3dmodels/662105130822_Downloads_STP_662105130822_rev1.stp
     (offset (xyz 6 -5 2))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
-  (model ${VIKINGSX}/3D/Wurth/662005013322_Download_STP_662005013322_rev1.stp
+  (model ${VIKINGS}/3dmodels/662005013322_Download_STP_662005013322_rev1.stp
     (offset (xyz 6 -13.5 2))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

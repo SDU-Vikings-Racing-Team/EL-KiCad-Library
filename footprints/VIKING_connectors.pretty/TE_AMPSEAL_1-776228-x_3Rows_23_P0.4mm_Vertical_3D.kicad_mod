@@ -50,7 +50,7 @@
   (pad "" np_thru_hole circle (at 23.7 -10.8) (size 2.2 2.2) (drill 2) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -25.2 7.3) (size 2.2 2.2) (drill 2) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 25.2 7.3) (size 2.2 2.2) (drill 2) (layers *.Cu *.Mask))
-  (model ${VIKINGSX}/3D/TE/c-1-776228-1-e-3d.stp
+  (model ${VIKINGS}/3dmodels/c-1-776228-1-e-3d.stp
     (offset (xyz 0 0 34.25))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

@@ -1,0 +1,238 @@
+(footprint "SOT65P220X100-3N"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "SC-70 (SOT-323) CASE419-04 ISSUE M")
+	(tags "MOSFET (N-Channel)")
+	(property "Reference" "Q**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "47b97fc7-9027-4562-a485-154ec52e4402")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "SOT65P220X100-3N"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "bdb4712d-b298-484b-881c-a86b7a382066")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "358e92af-d393-47af-88b1-1c3f5f65f4e4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5059bd26-a74d-496c-88ee-296c0da8069f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.575 -1.175)
+		(end -0.425 -1.175)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6cb343e7-3cfe-432f-9bcc-01485cbffa05")
+	)
+	(fp_line
+		(start -0.075 -1)
+		(end 0.075 -1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "adc9fd76-de29-4d0b-8fa4-569edcaa7136")
+	)
+	(fp_line
+		(start -0.075 1)
+		(end -0.075 -1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4be4c39e-0c89-4612-a679-ed0b0e83039c")
+	)
+	(fp_line
+		(start 0.075 -1)
+		(end 0.075 1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "44006606-9f27-4e58-bbff-405090cc4b54")
+	)
+	(fp_line
+		(start 0.075 1)
+		(end -0.075 1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "72189867-d23e-4985-8fc7-b071471b6a4c")
+	)
+	(fp_line
+		(start -1.825 -1.35)
+		(end 1.825 -1.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "be8433f7-8c8f-46cd-8185-0d46b2b04434")
+	)
+	(fp_line
+		(start -1.825 1.35)
+		(end -1.825 -1.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a659f795-2f66-46de-b703-de8347defd29")
+	)
+	(fp_line
+		(start 1.825 -1.35)
+		(end 1.825 1.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ab4e2e93-3cc4-4059-b327-a1d5b855dabe")
+	)
+	(fp_line
+		(start 1.825 1.35)
+		(end -1.825 1.35)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "dfbbc01e-8df1-400d-b6eb-7988e9110a84")
+	)
+	(fp_line
+		(start -0.625 -1)
+		(end 0.625 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3eb794d7-6777-40da-8e83-8f9d3b9044c8")
+	)
+	(fp_line
+		(start -0.625 -0.35)
+		(end 0.025 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "ddddab23-bf77-404f-8539-c26412c552cb")
+	)
+	(fp_line
+		(start -0.625 1)
+		(end -0.625 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e62084b3-3c9f-466d-a3fa-0d12c3a45208")
+	)
+	(fp_line
+		(start 0.625 -1)
+		(end 0.625 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8a2dfe27-b3d6-4119-a259-1a880ffaa84f")
+	)
+	(fp_line
+		(start 0.625 1)
+		(end -0.625 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6086ddda-7ca5-4410-8c79-4fbe6806b79b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "c678f35c-4b0d-4935-831d-483bfd91308b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1 -0.65 90)
+		(size 0.55 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7d991aff-f72b-4b6b-add7-9c446f6a005f")
+	)
+	(pad "2" smd rect
+		(at -1 0.65 90)
+		(size 0.55 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0f7c68d1-a5f4-405a-82c9-b075713d11c7")
+	)
+	(pad "3" smd rect
+		(at 1 0 90)
+		(size 0.55 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6e7a164b-96f9-4172-9f31-64dc0a74d53a")
+	)
+	(embedded_fonts no)
+	(model "${VIKINGS}/3dmodels/2V7002WT1G.stp"
+		(hide yes)
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

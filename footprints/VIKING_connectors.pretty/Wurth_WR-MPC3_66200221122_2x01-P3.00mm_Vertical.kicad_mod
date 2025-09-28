@@ -22,12 +22,12 @@
   (pad 2 thru_hole circle (at 0 -3) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
   (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 1.1) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at -3 -4) (size 1.1 1.1) (drill 1.1) (layers *.Cu *.Mask))
-  (model ${VIKINGSX}/3D/Wurth/66200221122_rev1.stp
+  (model ${VIKINGS}/3dmodels/66200221122_rev1.stp
     (offset (xyz 0 1.5 5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 90))
   )
-  (model ${VIKINGSX}/3D/Wurth/662002113322_rev1.stp
+  (model ${VIKINGS}/3dmodels/662002113322_rev1.stp
     (offset (xyz 0 1.5 13.75))
     (scale (xyz 1 1 1))
     (rotate (xyz 180 0 90))
