@@ -36,23 +36,30 @@ EL-KiCad-Library/
     
 - **library-tables**: template tables
     
-- **scripts**: library setup (and potentially other helpers in the future)
+- **scripts**: library setup and helpers
     
 - **docs**: documentation
+    
 
 ### Responsibilities of maintainers
 
 - Add new components to the library repository
+    
 - Tag releases of the library repository so other repositories can use known working versions
+    
 - Review contributions from team members
+    
 
 ### Releasing new versions
 
 1. Test changes locally with at least one KiCad project.
+    
 2. Commit and push updates to **EL-KiCad-Library**.
+    
 3. Tag a release, for example `v0.2.0`.
+    
 4. Notify teams to update their submodule reference.
-
+    
 
 ---
 
@@ -73,7 +80,7 @@ After this, teammates only need to clone with `--recurse-submodules` to get it.
 
 ### Cloning a repository with the library
 
-When you clone a repository (for example `EL-Dashboard`), make sure to include submodules:
+When you clone a repository, make sure to include submodules:
 
 ```bash
 git clone --recurse-submodules https://github.com/SDU-Vikings-Racing-Team/EL-Dashboard.git
@@ -115,6 +122,7 @@ If you have never opened KiCad before, the first time you open KiCad it will pro
 - Select **Copy default global symbol library table (recommended)**
     
 - Press **OK**
+    
 
 This ensures you have both the default KiCad libraries and the Vikings library.
 
@@ -127,6 +135,7 @@ This ensures you have both the default KiCad libraries and the Vikings library.
 3. In **PCB Editor**, open the **Footprint Libraries Browser** and confirm `VIKING_*` entries.
     
 4. Place a symbol, update PCB, and verify that the footprint and 3D model are correct.
+    
 
 ### Updating submodule
 
@@ -139,9 +148,43 @@ git add libs/EL-KiCad-Library
 git commit -m "Update EL-KiCad-Library to v0.2.0"
 ```
 
+### Bumping the library pointer after changes
+
+If a teammate adds or edits content in **EL-KiCad-Library** and you need it in your repository:
+
+```bash
+git submodule update --init --recursive
+git -C libs/EL-KiCad-Library fetch origin
+git submodule update --remote libs/EL-KiCad-Library
+git add libs/EL-KiCad-Library
+git commit -m "Bumped EL-KiCad-Library submodule to latest"
+git push
+```
+
+- If a new symbol was added inside an existing `.kicad_sym` file, no table regeneration is needed.
+    
+- If a brand new `.kicad_sym` file or a new `.pretty` library was added, regenerate project tables:
+    
+
+```bash
+python libs/EL-KiCad-Library/scripts/setup_project.py
+git add **/sym-lib-table **/fp-lib-table
+git commit -m "Refresh KiCad library tables"
+git push
+```
+
+### Handling Git safe.directory
+
+On shared or VM paths, Git may block submodule operations. If you see a message about dubious ownership, mark the path as safe:
+
+```bash
+git config --global --add safe.directory /absolute/path/to/your/repo/libs/EL-KiCad-Library
+git submodule update --init --recursive
+```
+
 ### Ignoring projects
 
-To skip irrelevant folder during setup, create `.kicadprojignore` in the repository root:
+To skip irrelevant folders during setup, create `.kicadprojignore` in the repository root:
 
 ```
 **/libs/**
@@ -156,3 +199,5 @@ projects:
   - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/DashboardPCB
   - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/Steering Wheel/SteeringWheelPCB
 ```
+
+---

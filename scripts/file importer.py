@@ -4,16 +4,16 @@ import zipfile
 # Base library paths
 FOOTPRINT_BASE = r"X:\DOCUMENTS\Uni\SDU_Vikings\EL-KiCad-Library\footprints"
 MODEL_BASE     = r"X:\DOCUMENTS\Uni\SDU_Vikings\EL-KiCad-Library\3dmodels"
-SYMBOL_BASE    = r"X:\DOCUMENTS\Uni\SDU_Vikings\EL-KiCad-Library\symbols\to sort"
+SYMBOL_BASE    = r"X:\DOCUMENTS\Uni\SDU_Vikings\EL-KiCad-Library\symbols\to_sort"
 
 # Footprint libraries
 FOOTPRINT_FOLDERS = [
-    "VIKING_connectors.pretty",
-    "VIKING_graphics.pretty",
-    "VIKING_ic.pretty",
-    "VIKING_misc.pretty",
-    "VIKING_passives.pretty",
-    "VIKING_semiconductors.pretty",
+    "VIKING_Connectors.pretty",
+    "VIKING_Graphics.pretty",
+    "VIKING_IC.pretty",
+    "VIKING_Misc.pretty",
+    "VIKING_Passives.pretty",
+    "VIKING_Semiconductors.pretty",
 ]
 
 def process_zip(zip_path):
