@@ -1,5 +1,5 @@
-# This script is chat gpt vibe coded, by the undertakers of the project to bulk move 3d model files and references from one location to another
-# all the paths are hardcoded, so if you want to use it yourself, you have to modify the paths a bit
+# This script is chat gpt vibe coded by the undertakers of the project to bulk move 3d model files and references from one location to another.
+# All the paths are hardcoded, so if you want to use it yourself, you have to modify the paths a bit.
 
 import os
 import re
