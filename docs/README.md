@@ -3,69 +3,76 @@
 This guide explains how to set up and maintain the shared EL-KiCad-Library across multiple repositories and projects. It is written for both maintainers and team members.
 
 ---
-
-## Maintainer Guide
-
-### Library repository structure
-
-The EL-KiCad-Library repository is structured as follows:
-
-```
-EL-KiCad-Library/
-├─ symbols/
-│   ├─ VIKING_Connectors.kicad_sym
-│   ├─ VIKING_Passives.kicad_sym
-│   └─ ...
-├─ footprints/
-│   ├─ VIKING_Connectors.pretty/
-│   ├─ VIKING_Passives.pretty/
-│   └─ ...
-├─ 3dmodels/
-│   └─ ...
-├─ scripts/
-│   └─ setup_project.py
-└─ docs/
-    └─ README.md
-```
-
-- **symbols**: schematic symbol libraries
-    
-- **footprints**: PCB footprint libraries
-    
-- **3dmodels**: 3D models
-    
-- **library-tables**: template tables
-    
-- **scripts**: library setup and helpers
-    
-- **docs**: documentation
-    
-
-### Responsibilities of maintainers
-
-- Add new components to the library repository
-    
-- Tag releases of the library repository so other repositories can use known working versions
-    
-- Review contributions from team members
-    
-
-### Releasing new versions
-
-1. Test changes locally with at least one KiCad project.
-    
-2. Commit and push updates to **EL-KiCad-Library**.
-    
-3. Tag a release, for example `v0.2.0`.
-    
-4. Notify teams to update their submodule reference.
-    
-
----
-
 ## Team Member Guide
 
-### Adding the library submodule
+### Cloning the global library
+Having git installed on your computer is a prerequisite
+
+- Navigate to a suitable folder location on your PC, take note of this path. This could for example be "X:\DOCUMENTS\Uni\SDU_Vikings"
+- Open your command prompt in this folder, and type
+```bash
+git clone https://github.com/SDU-Vikings-Racing-Team/EL-KiCad-Library.git
+```
+### KiCad global setup
+
+If you have never opened KiCad before, the first time you open KiCad it will prompt you to configure the global symbol library table.
+
+- Select **Copy default global symbol library table (recommended)**
+- Press **OK**
+  
+- Open KiCad>Preferences>Configure paths
+- Press the (+) button and type VIKINGS in the name field (important that it is exactly like this)
+- in the Path field, you type the path of the cloned repository. (so in my case, i will type X:\DOCUMENTS\Uni\SDU_Vikings\EL-KiCad-Library)
+- Press ok
+- Open preferences>Manage symbol libraries...
+- In the global tab, add these fields by pressing the (+) button
+
+| **Nickname**  | **Library Path**  |
+| ------------- | ------------- |
+| VIKING_passives       | ${VIKINGS}/symbols/VIKING_passives.kicad_sym  |
+| VIKING_connectors     | ${VIKINGS}/symbols/VIKING_connectors.kicad_sym     |
+| VIKING_semiconductors | ${VIKINGS}/symbols/VIKING_semiconductors.kicad_sym |
+| VIKING_ic             | ${VIKINGS}/symbols/VIKING_ic.kicad_sym             |
+| VIKING_misc           | ${VIKINGS}/symbols/VIKING_misc.kicad_sym           |
+
+- Press OK
+- Open preferences>Manage footprint libraries...
+- In the global tab, add these fields by pressing the (+) button
+  
+| **Nickname**          | **Library Path**                                   |
+|-----------------------|----------------------------------------------------|
+| VIKING_passives       | ${VIKINGS}/symbols/VIKING_passives.pretty       |
+| VIKING_connectors     | ${VIKINGS}/symbols/VIKING_connectors.pretty     |
+| VIKING_semiconductors | ${VIKINGS}/symbols/VIKING_semiconductors.pretty |
+| VIKING_ic             | ${VIKINGS}/symbols/VIKING_ic.pretty             |
+| VIKING_misc           | ${VIKINGS}/symbols/VIKING_misc.pretty           |
+
+- Press OK
+
+
+    
+
+### Verifying in KiCad
+
+1. Open the project `.kicad_pro`.
+    
+2. In **Schematic Editor**, press **A** and search for `VIKING_`. Your libraries should appear.
+    
+3. In **PCB Editor**, open the **Footprint Libraries Browser** and confirm `VIKING_*` entries.
+    
+4. Place a symbol, update PCB, and verify that the footprint and 3D model are correct.
+
+### Adding additional components.
+
+- Before adding a new component, verify that the Vikings library, does not already contain something suitable or the standard Kicad library.
+- Add the symbol to the correct symbol library
+- Add the footprint to the corresponding footprint library
+- Make sure the symbol references the correct footprint.
+- For example lets say i want to add WC42069, as an IC. In the symbol properties, the footprint field must say VIKING_ic:WC42069, assuming the footprint name is the same as the symbol
+- Make sure the footprint references the 3d model correctly, by checking the 3d model tab of the footprint properties
+- In case of WC42069, the field should say ${VIKINGS}/3dmodels/WC42069.stp (it is important that it is referenced like this, so it works across computers)
+
+### Adding the library submodule, (advanced use)
 
 If your repository does not yet contain the library, add it once as a submodule:
 
@@ -114,27 +121,6 @@ Commit these files:
 git add **/sym-lib-table **/fp-lib-table
 git commit -m "Generate KiCad library tables"
 ```
-
-### KiCad global setup
-
-If you have never opened KiCad before, the first time you open KiCad it will prompt you to configure the global symbol library table.
-
-- Select **Copy default global symbol library table (recommended)**
-    
-- Press **OK**
-    
-
-This ensures you have both the default KiCad libraries and the Vikings library.
-
-### Verifying in KiCad
-
-1. Open the project `.kicad_pro`.
-    
-2. In **Schematic Editor**, press **A** and search for `VIKING_`. Your libraries should appear.
-    
-3. In **PCB Editor**, open the **Footprint Libraries Browser** and confirm `VIKING_*` entries.
-    
-4. Place a symbol, update PCB, and verify that the footprint and 3D model are correct.
     
 
 ### Updating submodule
@@ -199,5 +185,64 @@ projects:
   - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/DashboardPCB
   - projects/EL-Dashboard/4D-Systems-Dashboard (TIVA)/Steering Wheel/SteeringWheelPCB
 ```
+
+## Maintainer Guide
+
+### Library repository structure
+
+The EL-KiCad-Library repository is structured as follows:
+
+```
+EL-KiCad-Library/
+├─ symbols/
+│   ├─ VIKING_Connectors.kicad_sym
+│   ├─ VIKING_Passives.kicad_sym
+│   └─ ...
+├─ footprints/
+│   ├─ VIKING_Connectors.pretty/
+│   ├─ VIKING_Passives.pretty/
+│   └─ ...
+├─ 3dmodels/
+│   └─ ...
+├─ scripts/
+│   └─ setup_project.py
+└─ docs/
+    └─ README.md
+```
+
+- **symbols**: schematic symbol libraries
+    
+- **footprints**: PCB footprint libraries
+    
+- **3dmodels**: 3D models
+    
+- **library-tables**: template tables
+    
+- **scripts**: library setup and helpers
+    
+- **docs**: documentation
+    
+
+### Responsibilities of maintainers
+
+- Add new components to the library repository
+    
+- Tag releases of the library repository so other repositories can use known working versions
+    
+- Review contributions from team members
+    
+
+### Releasing new versions
+
+1. Test changes locally with at least one KiCad project.
+    
+2. Commit and push updates to **EL-KiCad-Library**.
+    
+3. Tag a release, for example `v0.2.0`.
+    
+4. Notify teams to update their submodule reference.
+    
+
+---
 
 ---
