@@ -1,0 +1,223 @@
+(footprint "MINIASMD"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "miniASMDC")
+	(tags "Resettable Fuse")
+	(property "Reference" "F**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "MINIASMD"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "00000000-0000-0000-0000-000000000000")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00000000-0000-0000-0000-000000000000")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00000000-0000-0000-0000-000000000000")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -3.7 -0.1)
+		(end -3.7 -0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start -3.7 0.1)
+		(end -3.7 0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start 0 -1.52)
+		(end 0 1.52)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_arc
+		(start -3.7 -0.1)
+		(mid -3.6 0)
+		(end -3.7 0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_arc
+		(start -3.7 0.1)
+		(mid -3.8 0)
+		(end -3.7 -0.1)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start -4.23 -2.62)
+		(end 4.23 -2.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start -4.23 2.62)
+		(end -4.23 -2.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start 4.23 -2.62)
+		(end 4.23 2.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start 4.23 2.62)
+		(end -4.23 2.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start -2.275 -1.62)
+		(end 2.275 -1.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start -2.275 1.62)
+		(end -2.275 -1.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start 2.275 -1.62)
+		(end 2.275 1.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_line
+		(start 2.275 1.62)
+		(end -2.275 1.62)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "00000000-0000-0000-0000-000000000000")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2.39 0)
+		(size 1.68 3.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(pad "2" smd rect
+		(at 2.39 0)
+		(size 1.68 3.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "00000000-0000-0000-0000-000000000000")
+	)
+	(embedded_fonts no)
+	(model "${VIKINGS}/3dmodels/MINIASMDC075F_24-2.stp"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
