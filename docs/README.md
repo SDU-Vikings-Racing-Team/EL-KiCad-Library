@@ -29,11 +29,11 @@ If you have never opened KiCad before, the first time you open KiCad it will pro
 
 | **Nickname**  | **Library Path**  |
 | ------------- | ------------- |
-| VIKING_passives       | ${VIKINGS}/symbols/VIKING_passives.kicad_sym  |
-| VIKING_connectors     | ${VIKINGS}/symbols/VIKING_connectors.kicad_sym     |
-| VIKING_semiconductors | ${VIKINGS}/symbols/VIKING_semiconductors.kicad_sym |
-| VIKING_ic             | ${VIKINGS}/symbols/VIKING_ic.kicad_sym             |
-| VIKING_misc           | ${VIKINGS}/symbols/VIKING_misc.kicad_sym           |
+| VIKING_Passives       | ${VIKINGS}/symbols/VIKING_Passives.kicad_sym  |
+| VIKING_Connectors     | ${VIKINGS}/symbols/VIKING_Connectors.kicad_sym     |
+| VIKING_Semiconductors | ${VIKINGS}/symbols/VIKING_Semiconductors.kicad_sym |
+| VIKING_IC             | ${VIKINGS}/symbols/VIKING_IC.kicad_sym             |
+| VIKING_Misc           | ${VIKINGS}/symbols/VIKING_Misc.kicad_sym           |
 
 - Press OK
 - Open preferences>Manage footprint libraries...
@@ -41,11 +41,11 @@ If you have never opened KiCad before, the first time you open KiCad it will pro
   
 | **Nickname**          | **Library Path**                                   |
 |-----------------------|----------------------------------------------------|
-| VIKING_passives       | ${VIKINGS}/symbols/VIKING_passives.pretty       |
-| VIKING_connectors     | ${VIKINGS}/symbols/VIKING_connectors.pretty     |
-| VIKING_semiconductors | ${VIKINGS}/symbols/VIKING_semiconductors.pretty |
-| VIKING_ic             | ${VIKINGS}/symbols/VIKING_ic.pretty             |
-| VIKING_misc           | ${VIKINGS}/symbols/VIKING_misc.pretty           |
+| VIKING_Passives       | ${VIKINGS}/symbols/VIKING_Passives.pretty       |
+| VIKING_Connectors     | ${VIKINGS}/symbols/VIKING_Connectors.pretty     |
+| VIKING_Semiconductors | ${VIKINGS}/symbols/VIKING_Semiconductors.pretty |
+| VIKING_IC             | ${VIKINGS}/symbols/VIKING_IC.pretty             |
+| VIKING_Misc           | ${VIKINGS}/symbols/VIKING_Misc.pretty           |
 
 - Press OK
 
